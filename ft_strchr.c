@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:27:34 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/10 12:03:47 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 17:03:14 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,8 @@ char	*ft_strchr(const char *str, int ch)
 	src = (char *)str;
 	index = 0;
 	while (src[index] != 0)
-	{
-		if (src[index] == ch)
-			return (&src[index]);
-		index++;
-	}
+		if (src[index++] == ch)
+			return (&src[--index]);
 	if (src[index] == ch)
 		return (&src[index]);
 	return (0);

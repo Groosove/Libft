@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:30:36 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/05 12:32:05 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 16:25:12 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *tmp;
-
-	tmp = (char *)s;
-	while (n-- != 0)
-		*tmp++ = 0;
+	ft_memset(s, 0, n);
 }

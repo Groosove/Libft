@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:27:34 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/27 10:09:00 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 17:09:09 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*dst;
 	int		count;
 
-	if (s1 == 0 || s2 == 0)
-		return (0);
-	if (!(dst = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	if (!s1 || !s2 || !(dst = malloc((ft_strlen(s1) + ft_strlen(s2) + 1))))
 		return (0);
 	count = 0;
 	while (*s1 != 0)

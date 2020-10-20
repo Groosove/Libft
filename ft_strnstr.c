@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:27:34 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/27 12:04:09 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 17:15:14 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	dst = (char *)big;
-	size = ft_strlen(little);
-	if (size == 0)
+	if (!(size = ft_strlen(little)))
 		return (dst);
 	if (*big == 0 || len == 0)
 		return (0);
 	while (i++ <= len - size && *dst != 0)
 	{
-		if ((*dst == *little) && (ft_strncmp(dst, little, size) == 0))
+		if ((*dst == *little) && (!ft_strncmp(dst, little, size)))
 			return (dst);
 		dst++;
 	}

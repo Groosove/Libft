@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:27:34 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/16 12:39:11 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 16:30:12 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ static int	ft_length_nbr(int nbr)
 {
 	unsigned int length;
 
-	length = (nbr < 0) ? 1 : 0;
+	length = (nbr < 0) ? 2 : 1;
 	while ((nbr /= 10) != 0)
 		length++;
-	return (++length);
+	return (length);
 }
 
 char		*ft_itoa(int n)
@@ -30,8 +30,7 @@ char		*ft_itoa(int n)
 	unsigned int	number;
 
 	length = ft_length_nbr(n);
-	dst = (char *)malloc(sizeof(char) * (length + 1));
-	if (dst == 0)
+	if (!(dst = (char *)malloc(sizeof(char) * (length + 1))))
 		return (0);
 	if (n == 0)
 		dst[0] = '0';

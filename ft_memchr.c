@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:27:34 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/05 12:40:03 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 16:43:39 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,10 @@
 void	*ft_memchr(const void *arr, int c, size_t size)
 {
 	char	*tmp;
-	char	value;
 
-	value = (char)c;
 	tmp = (char*)arr;
 	while (size-- != 0)
-	{
-		if (*tmp == value)
-			return (tmp);
-		tmp++;
-	}
+		if (*tmp++ == c)
+			return (tmp - 1);
 	return (0);
 }

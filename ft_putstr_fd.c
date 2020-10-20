@@ -6,7 +6,7 @@
 /*   By: flavon <flavon@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 12:27:34 by flavon            #+#    #+#             */
-/*   Updated: 2020/05/27 10:04:50 by flavon           ###   ########.fr       */
+/*   Updated: 2020/10/20 16:38:41 by flavon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
 	if (s == 0)
 		return ;
-	while (s[i] != 0)
-		write(fd, &s[i++], 1);
+	while (*s)
+		write(fd, s++, 1);
 }
